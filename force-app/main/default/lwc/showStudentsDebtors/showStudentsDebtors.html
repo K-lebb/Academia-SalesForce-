@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Alunos Atrasados" icon-name="standard:student">
+        <lightning-datatable
+            key-field="id" 
+            data={alunos} 
+            columns={pendentes} 
+            hide-checkbox-column="true" 
+            sorted-by="name" 
+            sorted-direction="asc" 
+            onrowaction={handleRowAction}
+        >
+        </lightning-datatable>
+
+        <c-modal-confirm show-modal={showModal} onclose={closeModal} onconfirm={confirmPayment}></c-modal-confirm>
+        
+    </lightning-card>
+</template>
